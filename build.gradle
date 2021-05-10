@@ -2,11 +2,12 @@ plugins {
     id 'java'
 }
 
-group 'ru.netology.web'
+group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
+sourceCompatibility = 1.8
 
+// кодировка файлов (если используете русский язык в файлах)
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
@@ -15,12 +16,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
     testImplementation 'com.codeborne:selenide:5.19.0'
-    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
-    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.3.1'
-
+    testImplementation 'io.rest-assured:rest-assured:4.3.1'
+    testImplementation 'io.rest-assured:json-schema-validator:4.3.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
 }
 
 test {
